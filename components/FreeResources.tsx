@@ -2,7 +2,7 @@
 import React from 'react';
 import { Language } from '../types';
 import { TRANSLATIONS, FREE_RESOURCES_FORM_URL, RESOURCES } from '../constants';
-import { trackEvent, GTM_EVENTS } from '../services/analytics';
+import { trackEvent } from '../services/analytics';
 
 interface FreeResourcesProps {
   lang: Language;

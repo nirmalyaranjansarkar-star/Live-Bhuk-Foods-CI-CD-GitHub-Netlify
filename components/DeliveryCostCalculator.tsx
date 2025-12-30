@@ -10,7 +10,8 @@ const DeliveryCostCalculator: React.FC = () => {
   // State
   const [mapDistance, setMapDistance] = useState<number>(0);
   const [cost, setCost] = useState<number>(0);
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  // Fixed: removed unused isAnimating variable
+  const [, setIsAnimating] = useState<boolean>(false);
   const [message, setMessage] = useState<string>('Tap map to set delivery location');
 
   // Map Refs

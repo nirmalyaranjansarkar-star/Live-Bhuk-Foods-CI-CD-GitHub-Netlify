@@ -1,5 +1,5 @@
 import React from 'react';
-import { MarketItem, Language } from '../types';
+import { Language } from '../types';
 import { MARKET_DATA, TRANSLATIONS } from '../constants';
 
 interface MarketWidgetProps {
