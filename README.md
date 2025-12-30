@@ -1,11 +1,24 @@
-<div align="center">
+# Bhuk Foods - Operations Manual
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+## 🚀 Deployment Instructions
 
-  <h1>Built with AI Studio</h2>
+This project is configured for deployment on Google Cloud.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+### 💻 Local Development
+To preview changes locally:
+```bash
+npm install
+npm run dev
+```
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+### ⚙️ Build for Production
+To build the project for production deployment (e.g. to Google Cloud Storage or Cloud Run):
+```bash
+npm run build
+```
+The optimized static files will be generated in the `dist` directory.
 
-</div>
+### ⚙️ Admin & Database
+- The Admin Dashboard is located at `/admin`.
+- Ensure you have enabled **Authentication**, **Firestore**, and **Storage** in your Google Cloud / Firebase Console.
+- Update `src/firebaseConfig.ts` with your project keys if you haven't already.

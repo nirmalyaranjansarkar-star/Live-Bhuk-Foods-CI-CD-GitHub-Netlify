@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Bhuk Foods | India's First Kitchen Substitution Service</title>
+    <meta name="description" content="Don't just order food, replace your kitchen. Bhuk Foods is your complete Kitchen Substitution Service in Kolkata. Healthy, home-style meals without the grocery shopping, cooking, or cleaning." />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23D32F2F%22 /><text x=%2250%22 y=%2270%22 font-size=%2270%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22 font-weight=%22bold%22>B</text></svg>" />
+    
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Tailwind CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              bengali: ['Noto Sans Bengali', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Initialize Theme
+      (function() {
+        const savedTheme = localStorage.getItem('bhuk_theme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && systemTheme)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+
+      // Google Tag Manager DataLayer Init
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+    </script>
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .font-bengali { font-family: 'Noto Sans Bengali', sans-serif; }
+      .font-bengali-support { font-family: 'Noto Sans Bengali', sans-serif; }
+      
+      /* Scroll Animation Utilities */
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+      .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      /* Stagger delays */
+      .delay-100 { transition-delay: 100ms; }
+      .delay-200 { transition-delay: 200ms; }
+      .delay-300 { transition-delay: 300ms; }
+
+      /* Smooth Scroll behavior with Header Offset */
+      html { 
+        scroll-behavior: smooth; 
+        scroll-padding-top: 5rem; /* Matches h-20 (80px) navbar height */
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "path": "https://esm.sh/path@^0.12.7",
+    "firebase/": "https://esm.sh/firebase@^12.7.0/",
+    "url": "https://esm.sh/url@^0.11.4",
+    "leaflet": "https://esm.sh/leaflet@^1.9.4"
+  }
+}
+</script>
+</head>
+  <body class="bg-[#FFF8E1] text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-[#fe0467] selection:text-white transition-colors duration-300">
+    <div id="root"></div>
+    <script>
+      // Simple Intersection Observer for Scroll Animations
+      document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        // Function to observe new elements
+        const observeElements = () => {
+          document.querySelectorAll('.animate-on-scroll:not(.observed)').forEach((el) => {
+            observer.observe(el);
+            el.classList.add('observed');
+          });
+        };
+
+        // Initial observation
+        observeElements();
+
+        // Observe DOM changes (for React route changes)
+        const mutationObserver = new MutationObserver(observeElements);
+        mutationObserver.observe(document.body, { childList: true, subtree: true });
+      });
+    </script>
+    <!-- Entry point for Vite - pointed to index.tsx with relative path -->
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
