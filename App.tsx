@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation, NavLink as RouterNavLink } from 'react-router-dom';
 import Home from './pages/Home';
@@ -18,7 +16,7 @@ import BhukLogo from './components/BhukLogo';
 import VisitorCounter from './components/VisitorCounter';
 // import Chatbot from '@/components/Chatbot';
 import { Language } from './types';
-import { TRANSLATIONS, POLICY_URLS, NO_MEAL_FORM_URL } from './constants';
+import { TRANSLATIONS, POLICY_URLS, NO_MEAL_FORM_URL, SUBSCRIPTION_FORM_URL } from './constants';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -196,7 +194,9 @@ const App: React.FC = () => {
               </div>
 
               <a 
-                href="/#plans" 
+                href={SUBSCRIPTION_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hidden md:block bg-[#D32F2F] text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-[#b71c1c] transition-all shadow-lg shadow-red-200 dark:shadow-red-900/50 hover:shadow-red-300 transform hover:-translate-y-0.5"
               >
                 Subscribe
@@ -235,7 +235,9 @@ const App: React.FC = () => {
 
               <div className="pt-4 mt-2">
                 <a 
-                  href="/#plans" 
+                  href={SUBSCRIPTION_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={closeMobileMenu}
                   className="block w-full text-center bg-[#D32F2F] text-white py-4 rounded-xl font-bold text-lg shadow-lg active:scale-95 transition-transform"
                 >
