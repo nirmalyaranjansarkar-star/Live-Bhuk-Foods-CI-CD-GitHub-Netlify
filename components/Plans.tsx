@@ -85,6 +85,11 @@ const Plans: React.FC<PlansProps> = ({ lang }) => {
             
             <div className="p-8 flex-1 flex flex-col">
               <div className="flex items-end gap-1 mb-8 pb-8 border-b border-slate-100 dark:border-slate-800">
+                <div className="flex flex-col mb-1.5 mr-2">
+                   {plan.type === 'subscription' && (
+                     <span className="text-[10px] text-slate-400 font-bold uppercase leading-tight text-right">Starts<br/>from</span>
+                   )}
+                </div>
                 <span className="text-5xl font-black text-[#D32F2F] tracking-tight">₹{plan.price}</span>
                 <div className="flex flex-col mb-1.5">
                    <span className="text-xs text-slate-400 font-bold uppercase">per</span>

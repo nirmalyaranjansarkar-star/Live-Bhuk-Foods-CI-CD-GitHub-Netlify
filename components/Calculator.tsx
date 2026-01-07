@@ -22,7 +22,7 @@ const Calculator: React.FC<CalculatorProps> = ({ lang }) => {
   const [currentCost, setCurrentCost] = useState(0);
 
   // --- COST ANALYSIS FRAMEWORK CONSTANTS ---
-  const BHUK_PER_PERSON = 3500; 
+  const BHUK_PER_PERSON = 2100; 
   const LPG_COST = 850; 
   
   // Grocery Specifics (Per Person)

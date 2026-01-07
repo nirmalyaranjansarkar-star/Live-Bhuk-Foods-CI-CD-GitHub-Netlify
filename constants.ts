@@ -1,6 +1,3 @@
-
-
-
 import { Plan, MarketItem, FAQItem, Testimonial, ResourceItem, BlogPost, GalleryItem, PainPointItem, ComparisonRow, Recipe, MenuCategory, Addon } from './types';
 
 export const LOCATIONS = ['Agarpara', 'Sodepur', 'Belgharia'];
@@ -43,8 +40,8 @@ export const PLANS: Plan[] = [
     type: 'subscription',
     name: 'Student Saver',
     nameBn: 'স্টুডেন্ট সেভার',
-    price: 2800,
-    perMeal: 30,
+    price: 1800,
+    perMeal: 20,
     features: ['3 Meals (Bfast+Lunch+Dinner)', 'Rice/Roti', 'Seasonal Sabji', 'Dal', 'Egg (2x week)'],
     featuresBn: ['৩ বেলা খাবার (সকাল+দুপুর+রাত)', 'ভাত/রুটি', 'সবজি', 'ডাল', 'ডিম (সপ্তাহে ২ দিন)'],
     bestFor: 'Students',
@@ -56,8 +53,8 @@ export const PLANS: Plan[] = [
     type: 'subscription',
     name: 'Office Ready',
     nameBn: 'অফিস রেডি',
-    price: 3500,
-    perMeal: 40,
+    price: 2100,
+    perMeal: 24,
     features: ['3 Meals (Bfast+Lunch+Dinner)', 'Rice/Roti', 'Chicken/Fish (Alt days)', 'Special Sabji', 'Salad'],
     featuresBn: ['৩ বেলা খাবার (সকাল+দুপুর+রাত)', 'ভাত/রুটি', 'মাছ/মাংস (একদিন অন্তর)', 'স্পেশাল সবজি', 'স্যালাড'],
     bestFor: 'Professionals',
@@ -69,8 +66,8 @@ export const PLANS: Plan[] = [
     type: 'subscription',
     name: 'Senior Lite',
     nameBn: 'সিনিয়র লাইট',
-    price: 3000,
-    perMeal: 35,
+    price: 1800,
+    perMeal: 20,
     features: ['3 Meals (Bfast+Lunch+Dinner)', 'Soft Rice/Roti', 'Chicken/Fish (Light Stew)', 'Less Oil/Spice', 'Digestible Sabji'],
     featuresBn: ['৩ বেলা খাবার (সকাল+দুপুর+রাত)', 'নরম ভাত/রুটি', 'মাছ/মাংস (হালকা ঝোল)', 'কম তেল-মসলা', 'সহজপাচ্য সবজি'],
     bestFor: 'Seniors',
@@ -130,8 +127,8 @@ export const COMPARISON_DATA: ComparisonRow[] = [
   {
     parameter: 'Monthly Spend',
     parameterBn: 'মাসিক খরচ',
-    bhuk: '₹2,800 - ₹3,500',
-    bhukBn: '₹২,৮০০ - ₹৩,৫০০',
+    bhuk: '₹1,800 - ₹2,100',
+    bhukBn: '₹১,৮০০ - ₹২,১০০',
     street: '₹3,500+',
     streetBn: '₹৩,৫০০+',
     apps: '₹8,000+',

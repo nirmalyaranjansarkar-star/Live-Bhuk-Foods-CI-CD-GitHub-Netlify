@@ -57,7 +57,7 @@ const PriceComparisonTable: React.FC<PriceComparisonTableProps> = ({ lang }) => 
     labelBn: 'বেসিক মিল (নিরামিষ)',
     sub: 'Breakfast + Lunch + Dinner',
     subBn: 'ব্রেকফাস্ট + লাঞ্চ + ডিনার',
-    values: ['₹1,950', '₹2,850', '₹3,300', '₹4,500+', '₹7,000+']
+    values: ['₹1,800', '₹1,800', '₹2,100', '₹4,500+', '₹7,000+']
   };
 
   const nonVegRow = {
@@ -65,7 +65,7 @@ const PriceComparisonTable: React.FC<PriceComparisonTableProps> = ({ lang }) => 
     labelBn: 'ফুল মিল (নন-ভেজ)',
     sub: 'With Non-Veg Dinner',
     subBn: 'সাথে নন-ভেজ ডিনার',
-    values: ['₹2,700', '₹3,600', '₹4,050', '₹6,000+', '₹9,000+']
+    values: ['₹2,500', '₹2,500', '₹2,800', '₹6,000+', '₹9,000+']
   };
 
   return (

@@ -2,7 +2,7 @@
 import React from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 import { Language } from '../types';
-import { TRANSLATIONS, NO_MEAL_FORM_URL } from '../constants';
+import { TRANSLATIONS, NO_MEAL_FORM_URL, SUBSCRIPTION_FORM_URL } from '../constants';
 import Calculator from '../components/Calculator';
 import DeliveryCostCalculator from '../components/DeliveryCostCalculator';
 import MarketWidget from '../components/MarketWidget';
@@ -25,6 +25,14 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ lang }) => {
   const t = TRANSLATIONS[lang];
   const isBn = lang === 'bn';
+
+  const scrollToCalculator = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById('calculator');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="min-h-screen">
@@ -64,7 +72,9 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <a 
-                href="#plans" 
+                href={SUBSCRIPTION_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => trackEvent(GTM_EVENTS.SUBSCRIBE_CLICK, { location: 'hero' })}
                 className="bg-[#D32F2F] text-white px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-[#b71c1c] transition-all duration-300 shadow-xl shadow-red-200 dark:shadow-red-900/40 hover:shadow-red-300 transform hover:-translate-y-1"
               >
@@ -72,7 +82,8 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
               </a>
               <a 
                 href="#calculator"
-                className="px-8 py-4 rounded-full font-bold text-lg text-center text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-orange-200 hover:bg-orange-50 dark:hover:bg-slate-700 transition-all duration-300"
+                onClick={scrollToCalculator}
+                className="px-8 py-4 rounded-full font-bold text-lg text-center text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-orange-200 hover:bg-orange-50 dark:hover:bg-slate-700 transition-all duration-300 cursor-pointer"
               >
                 Calculate Savings
               </a>
